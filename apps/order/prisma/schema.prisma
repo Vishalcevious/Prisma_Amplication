@@ -1,0 +1,42 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  alias               String?
+  alteredBy           String?
+  alteredDate         DateTime?
+  alterId             BigInt?
+  code                String?
+  conversionFrom      Float?
+  conversionTo        Float?
+  createdAt           DateTime  @default(now())
+  description         String?
+  enteredBy           String?
+  enteredDate         DateTime?
+  forInternalUse      Boolean?
+  gcRecord            Int?
+  id                  String    @id @default(cuid())
+  index               String?
+  indexNo             Int?
+  isActive            Boolean?
+  isBlockPost         Boolean?
+  isDelete            Boolean?
+  isGstApplicable     Boolean?
+  isModify            Boolean?
+  isProtected         Boolean?
+  isRemotePost        Boolean?
+  masterId            BigInt?
+  name                String?
+  optimisticLockField Int?
+  productType         Int?
+  remoteId            String?
+  sequenceNo          Int?
+  shortCode           String?
+  shortIndex          BigInt?
+}
